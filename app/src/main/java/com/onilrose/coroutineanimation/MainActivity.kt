@@ -62,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun performAnimation() {
         GlobalScope.launch {
+            animation(avatar, duration = 1000L) {
+                scaleX = 0.5f
+                scaleY = 0.5f
+            }
             animation(avatar, duration = 500L) { centerY = 200f }.join()
             floatAnimation(avatar, from = 1f, to = 0.5f, duration = 500L) { view, value ->
                 view.alpha = value
@@ -72,7 +76,11 @@ class MainActivity : AppCompatActivity() {
             floatAnimation(avatar, from = 1f, to = 1f, duration = 500L) { view, value ->
                 view.alpha = value
             }
-            animation(avatar, duration = 500L) { centerX = 600f }.join()
+            animation(avatar, duration = 1000L) {
+                scaleX = 1f
+                scaleY = 1f
+            }
+            animation(avatar, duration = 500L) { centerX = 540f }.join()
         }
 
     }
